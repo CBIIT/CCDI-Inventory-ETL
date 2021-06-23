@@ -1,0 +1,114 @@
+Nodes:
+  submitter:
+    Props:
+      - submitter_name
+      - submitter_id
+      - submitter_email
+      - submitter_era_id
+      - institution_id
+      - institution_name
+  submitted_file:
+    Props:
+      - ccdi_arm
+      - submission_date
+      - submission_ts
+      - source_ip
+      - file_count_validate
+      - filename_list_validate
+      - study_registered
+      - permitted_4_gru
+      - data_identifying
+      - species
+      - human_subjects
+      - files_count
+      - file_names
+      - file_name_suffixes
+      - is_free_text
+      - is_tsv_csv
+      - is_json
+      - is_xml
+      - is_other_non_binary
+      - is_excel
+      - is_dicom
+      - is_other_binary_image
+      - is_other_binary_non_image
+      - total_size_in_bytes
+      - subject_demographics
+      - subject_clinical_data
+      - subject_treatment_response_data
+      - subject_outcomes_data
+      - subject_imaging_data_raw
+      - subject_imaging_data_written_findings
+      - subject_data_metadata
+      - biospecimen_data
+      - surgical_pathology_reports
+      - histopathology_images_raw
+      - primary_dna_sequence_data
+      - germline_data
+      - somatic_data
+      - derived_germline_variants
+      - derived_somatic_variants
+      - primary_rnaseq_expression_data
+      - scrna_sequencing
+      - scchromatin_sequencing
+      - proteogenomics_data
+      - rppa_data
+      - fish
+      - imc
+      - in_vitro_cell_proliferation_assay
+      - in_vitro_small_molecule_sensitivity_assays
+      - in_vitro_crispr_screens
+      - in_vitro_shrna_orf_screens
+      - other
+      - other_specify
+      - primary_datatype
+      - derived_interventional_clinical_trial
+      - derived_observational_study
+      - have_subject_ids
+      - have_pii
+      - contain_biospecimen_ids
+      - contain_biospecimen_2_subject_mappings
+  study:
+    Props:
+      - pi_name
+      - pi_institution
+      - pi_email
+      - pi_era_id
+      - study_title
+      - study_phs_id
+      - is_published
+      - doi
+      - submitted_2_repo
+      - gdc
+      - pdc
+      - dbGap
+      - sra
+      - genbank
+      - figshare
+      - other_repo
+  file_set:
+    Props:
+      - file_ordinal
+      - file_id
+      - file_name
+      - file_md5
+      - file_content_format
+Relationships:
+  submitted_by:
+    Mul: many_to_many
+    Ends:
+      - Src: submitted_file
+        Dst: submitter
+    Props: null
+  study_within_submitted_file:
+    Mul: many_to_many
+    Ends:
+      - Src: study
+        Dst: submitted_file
+    Props: null
+  files_of_submitted_file:
+    Mul: many_to_one
+    Ends:
+      - Src: file_set
+        Dst: submitted_file
+    Props: null
