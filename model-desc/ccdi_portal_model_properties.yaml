@@ -1,12 +1,18 @@
 PropDefinitions:
   #properties of submitter:
+  submitter_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
   submitter_name:
     Desc: The full name of the person doing the actual submission.
     Src: None
     Type: string
     Req: false
     Private: false
-  submitter_id:
+  submitter_identifier:
     Desc: TBD.
     Src: None
     Type: string
@@ -36,7 +42,19 @@ PropDefinitions:
     Type: string
     Req: false
     Private: false
+  program_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: false
+    Private: false
   #properties of submitted_file:
+  submitted_file_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
   ccdi_arm:
     Desc: TBD.
     Src: None
@@ -95,20 +113,19 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type:
-      "C. elegans"
-      "Cat"
-      "Chicken"
-      "Dog"
-      "Drosophila"
-      "Hamster"
-      "Human"
-      "Mole"
-      "Mouse"
-      "Non-human primate"
-      "Pig"
-      "Rat"
-      "Tree shrew"
-      "Zebrafish"
+      - "Cat"
+      - "Chicken"
+      - "Dog"
+      - "Drosophila"
+      - "Hamster"
+      - "Human"
+      - "Mole"
+      - "Mouse"
+      - "Non-human primate"
+      - "Pig"
+      - "Rat"
+      - "Tree shrew"
+      - "Zebrafish"
     Req: false
     Private: false
   human_subjects:
@@ -367,13 +384,13 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type: 
-      "None"
-      "Demographics"
-      "Clinical"
-      "Treatment/response"
-      "Outcomes"
-      "Imaging - raw"
-      "Imaging - written findings"
+      - "None"
+      - "Demographics"
+      - "Clinical"
+      - "Treatment/response"
+      - "Outcomes"
+      - "Imaging-raw"
+      - "Imaging-written findings"
     Req: false
     Private: false
   derived_interventional_clinical_trial:
@@ -413,6 +430,12 @@ PropDefinitions:
     Req: false
     Private: false
 #properties of study:
+  study_id:
+    Desc: TBD.
+    Src: None
+    Type: String
+    Req: true
+    Private: false
   pi_name:
     Desc: TBD.
     Src: None
@@ -510,6 +533,12 @@ PropDefinitions:
     Req: false
     Private: false
 #properties of file_set:
+  file_set_id:
+    Desc: TBD.
+    Src: None
+    Type: String
+    Req: true
+    Private: false
   file_ordinal:
     Desc: TBD.
     Src: None
@@ -538,14 +567,14 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type:
-      "free_text"
-      "tsv/csv"
-      "json"
-      "xml"
-      "other_non_binary"
-      "excel"
-      "DICOM"
-      "other_binary_image"
-      "other_binary_non_image"
+      - "free_text"
+      - "tsv/csv"
+      - "json"
+      - "xml"
+      - "other_non_binary"
+      - "excel"
+      - "DICOM"
+      - "other_binary_image"
+      - "other_binary_non_image"
     Req: false
     Private: false

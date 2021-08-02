@@ -1,0 +1,26 @@
+Properties:
+  domain: ccdi.dataportal.cancer.gov
+  rel_prop_delimiter: "$"
+
+  plurals:
+    submitter: submitters
+    submitted_file: submitted_files
+    study: studies
+    file_set: file_sets
+    
+  type_mapping:
+    string: String
+    number: Float
+    integer: Int
+    boolean: Boolean
+    array: Array
+    object: Object
+    datetime: DateTime
+    date: Date
+    TBD: String
+
+  id_fields:
+    submitter: submitter_id
+    submitted_file: submitted_file_id
+    study: study_id
+    file_set: file_set_id

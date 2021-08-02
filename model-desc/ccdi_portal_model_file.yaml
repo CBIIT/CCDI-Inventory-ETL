@@ -1,14 +1,17 @@
 Nodes:
   submitter:
     Props:
-      - submitter_name
       - submitter_id
+      - submitter_name
+      - submitter_identifier
       - submitter_email
       - submitter_era_id
       - institution_id
       - institution_name
+      - program_id
   submitted_file:
     Props:
+      - submitted_file_id
       - ccdi_arm
       - submission_date
       - submission_ts
@@ -70,6 +73,7 @@ Nodes:
       - contain_biospecimen_2_subject_mappings
   study:
     Props:
+      - study_id
       - pi_name
       - pi_institution
       - pi_email
@@ -88,6 +92,7 @@ Nodes:
       - other_repo
   file_set:
     Props:
+      - file_set_id
       - file_ordinal
       - file_id
       - file_name

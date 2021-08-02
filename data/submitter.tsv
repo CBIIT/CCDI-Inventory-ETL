@@ -1,0 +1,2 @@
+type	submitter_id	submitter_name	submitter_identifier	submitter_email	submitter_era_id	institution_id	institution_name	program_id
+submitter	CCDI-P30-Submitter-0001	Alejandro Sweet	NCI-UUID-0001	Alejandro.Sweet-Cordero@ucsf.edu	ERA-Commons-0001	NCI-Insitution-0001	"University of California, San Francisco"	CCDI-Program-0001
