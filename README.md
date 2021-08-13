@@ -5,7 +5,13 @@ Python 3.6 or newer
 An initialized and running Neo4j database
 
 ## Add Dependencies
-Run ```pip3 install -r requirements.txt``` to install dependencies. Or run ```pip install -r requirements.txt``` if you are using virtualenv. The dependencies included in requirements.txt are listed below:
+Run the following command to install dependencies.
+
+```bash
+pip3 install -r requirements.txt
+```
+
+Or run ```pip install -r requirements.txt``` if you are using virtualenv. The dependencies included in requirements.txt are listed below:
 
 pyyaml
 
@@ -34,5 +40,8 @@ dataset: The directory containing the data to be loaded, a temporary directory i
 
 ## Load Data into Neo4j
 Run following command to load data into neo4j database:
-```python loader.py config/config.yml -p <neo4j password> -s model-desc/ccdi_portal_model_file.yaml -s model-desc/ccdi_portal_model_properties.yaml --prop-file model-desc/props-ccdi-portal.yml --no-backup --dataset data``` 
+
+```bash
+python loader.py config/config.yml -p <neo4j password> -s model-desc/ccdi_portal_model_file.yaml -s model-desc/ccdi_portal_model_properties.yaml --prop-file model-desc/props-ccdi-portal.yml --no-backup --dataset data
+``` 
 
