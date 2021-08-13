@@ -1,0 +1,6 @@
+type	alt_participant_id	source	participant.participant_id
+alt_participant	p7840	TCGA	sub123
+alt_participant	t09431	TARGET	sub456
+alt_participant	x30954213	NCI	sub456
+alt_participant	u290	CCR	sub456
+alt_participant	p3245	Children's Hospital of Philadelphia	sub298

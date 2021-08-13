@@ -1,0 +1,4 @@
+type	sample_id	sample_type	date_of_sample_collection	participant.participant_id
+sample	sample_001	Blood Derived Normal	20030113	sub123
+sample	sample_002	Solid Tissue Normal	20130910	sub456
+sample	sample_003	Bone Marrow Normal	20181124	sub298

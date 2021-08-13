@@ -1,0 +1,7 @@
+type	participant_id	gender	age_at_index	submitted_file.submitted_file_id
+participant	sub123	Male	12	CCDI-P30-File-0001
+participant	sub456	Female	6	CCDI-P30-File-0001
+participant	sub456	Female	6	CCDI-P30-File-0002
+participant	sub456	Female	6	CCDI-P30-File-0004
+participant	sub298	Male	28	CCDI-P30-File-0002
+participant	sub298	Male	28	CCDI-P30-File-0003

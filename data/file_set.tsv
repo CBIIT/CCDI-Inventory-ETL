@@ -1,11 +1,11 @@
-type	file_set_id	file_ordinal	file_id	file_name	file_md5	file_content_format	submitted_file.submitted_file_id
-file_set	FILE-0001	1	fd0f2fca-3138-5dcb-9bbc-65f038294f2c	1_RNA_COUNT.txt	df72f991c4a844f7413bdf2338a8b84c	free_text	CCDI-P30-File-0001
-file_set	FILE-0002	2	0123db97-7e67-5a03-b3c2-22050b51be1d	2_RNA_COUNT.txt	b67c16c69383060cefcd052034d4624e	free_text	CCDI-P30-File-0001
-file_set	FILE-0003	3	3bb61d71-bcde-5e52-aea5-917b9e6e997c	3_RNA_COUNT.txt	581be71f389130efed51f0ecbade00f3	free_text	CCDI-P30-File-0001
-file_set	FILE-0004	1	498ce28f-c039-5ad1-b238-7af4769a16eb	4_RNA_COUNT.xlsx	bc7adef15f5f74fe9707bdfdc5f41548	excel	CCDI-P30-File-0002
-file_set	FILE-0005	2	e0d14b13-8b47-5c6a-ac7a-b6a884e9d9b5	5_RNA_COUNT.xlsx	651826e15f731504e8f93c9e79f271b2	excel	CCDI-P30-File-0002
-file_set	FILE-0006	1	61c8b231-95a2-53ee-b98e-7fa35697364a	6_RNA_COUNT.csv	2032ee8c6370ca7a86704c270208a581	tsv/csv	CCDI-P30-File-0003
-file_set	FILE-0007	2	836c7288-df43-5ac3-9779-a857b7a71464	7_RNA_COUNT.csv	d62ddcdac18aaed56fcae2719b4de3c7	tsv/csv	CCDI-P30-File-0003
-file_set	FILE-0008	1	939266a7-5ffe-5ac4-958b-026054fda391	8_RNA_COUNT.txt	ffecff122827d6b8d58638de0fa0a6de	free_text	CCDI-P30-File-0004
-file_set	FILE-0009	2	0c8d38ca-254d-5a89-9428-90bba779f297	9_RNA_COUNT.txt	3fe9d736de97abd9e6f4ccc01cbe1fd6	free_text	CCDI-P30-File-0004
-file_set	FILE-0010	3	3d840d76-54eb-5ff7-b7c7-b170ba6bbc86	10_RNA_COUNT.txt	e1a3bd54ec1fe3d2eed1c0f6d1839caa	free_text	CCDI-P30-File-0004
+type	file_set_id	file_ordinal	file_id	file_name	file_md5	file_content_format	file_deposit_location	submitted_file.submitted_file_id
+file_set	FILE-0001	1	fd0f2fca-3138-5dcb-9bbc-65f038294f2c	1_RNA_COUNT.txt	df72f991c4a844f7413bdf2338a8b84c	free_text	https://s3.amazonaws.com/CDS/file_1	CCDI-P30-File-0001
+file_set	FILE-0002	2	0123db97-7e67-5a03-b3c2-22050b51be1d	2_RNA_COUNT.txt	b67c16c69383060cefcd052034d4624e	free_text	https://s3.amazonaws.com/CDS/file_2	CCDI-P30-File-0001
+file_set	FILE-0003	3	3bb61d71-bcde-5e52-aea5-917b9e6e997c	3_RNA_COUNT.txt	581be71f389130efed51f0ecbade00f3	free_text	https://s3.amazonaws.com/CDS/file_3	CCDI-P30-File-0001
+file_set	FILE-0004	1	498ce28f-c039-5ad1-b238-7af4769a16eb	4_RNA_COUNT.xlsx	bc7adef15f5f74fe9707bdfdc5f41548	excel	https://s3.amazonaws.com/CDS/file_4	CCDI-P30-File-0002
+file_set	FILE-0005	2	e0d14b13-8b47-5c6a-ac7a-b6a884e9d9b5	5_RNA_COUNT.xlsx	651826e15f731504e8f93c9e79f271b2	excel	https://s3.amazonaws.com/CDS/file_5	CCDI-P30-File-0002
+file_set	FILE-0006	1	61c8b231-95a2-53ee-b98e-7fa35697364a	6_RNA_COUNT.csv	2032ee8c6370ca7a86704c270208a581	tsv/csv	https://s3.amazonaws.com/CDS/file_6	CCDI-P30-File-0003
+file_set	FILE-0007	2	836c7288-df43-5ac3-9779-a857b7a71464	7_RNA_COUNT.csv	d62ddcdac18aaed56fcae2719b4de3c7	tsv/csv	https://s3.amazonaws.com/CDS/file_7	CCDI-P30-File-0003
+file_set	FILE-0008	1	939266a7-5ffe-5ac4-958b-026054fda391	8_RNA_COUNT.txt	ffecff122827d6b8d58638de0fa0a6de	free_text	https://s3.amazonaws.com/CDS/file_8	CCDI-P30-File-0004
+file_set	FILE-0009	2	0c8d38ca-254d-5a89-9428-90bba779f297	9_RNA_COUNT.txt	3fe9d736de97abd9e6f4ccc01cbe1fd6	free_text	https://s3.amazonaws.com/CDS/file_9	CCDI-P30-File-0004
+file_set	FILE-0010	3	3d840d76-54eb-5ff7-b7c7-b170ba6bbc86	10_RNA_COUNT.txt	e1a3bd54ec1fe3d2eed1c0f6d1839caa	free_text	https://s3.amazonaws.com/CDS/file_10	CCDI-P30-File-0004

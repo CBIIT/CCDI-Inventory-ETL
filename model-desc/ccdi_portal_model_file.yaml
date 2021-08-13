@@ -9,6 +9,20 @@ Nodes:
       - institution_id
       - institution_name
       - program_id
+  participant:
+    Props:
+      - participant_id
+      - gender
+      - age_at_index
+  alt_participant:
+    Props:
+      - alt_participant_id
+      - source
+  sample:
+    Props:
+      - sample_id
+      - sample_type
+      - date_of_sample_collection
   submitted_file:
     Props:
       - submitted_file_id
@@ -33,6 +47,7 @@ Nodes:
       - is_other_non_binary
       - is_excel
       - is_dicom
+      - is_svs
       - is_other_binary_image
       - is_other_binary_non_image
       - total_size_in_bytes
@@ -69,8 +84,11 @@ Nodes:
       - derived_observational_study
       - have_subject_ids
       - have_pii
+      - subject_id_cross_reference
       - contain_biospecimen_ids
       - contain_biospecimen_2_subject_mappings
+      - participant_id_column_header_or_number
+      - alt_participant_id_column_header_or_number
   study:
     Props:
       - study_id
@@ -98,7 +116,26 @@ Nodes:
       - file_name
       - file_md5
       - file_content_format
+      - file_deposit_location
 Relationships:
+  has_participant:
+    Mul: many_to_many
+    Ends:
+      - Src: participant
+        Dst: submitted_file
+    Props: null
+  has_alt_participant:
+    Mul: many_to_many
+    Ends:
+      - Src: alt_participant
+        Dst: participant
+    Props: null
+  sample_from_participant:
+    Mul: many_to_one
+    Ends:
+      - Src: sample
+        Dst: participant
+    Props: null
   submitted_by:
     Mul: many_to_many
     Ends:

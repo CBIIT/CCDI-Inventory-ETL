@@ -48,6 +48,64 @@ PropDefinitions:
     Type: string
     Req: false
     Private: false
+  #properties of participant:
+  participant_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  gender:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  age_at_index:
+    Desc: TBD.
+    Src: None
+    Type: Integer
+    Req: true
+    Private: false
+  #properties of alt_participant:
+  alt_participant_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  source:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  #properties of sample:
+  sample_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  sample_type:
+    Desc: TBD.
+    Src: None
+    Type: 
+      - "Primary Solid Tumor"
+      - "Metastatic"
+      - "Blood Derived Normal"
+      - "Solid Tissue Normal"
+      - "Bone Marrow Normal"
+      - "Cell Lines"
+      - "Primary Xenograft Tissue"
+    Req: true
+    Private: false
+  date_of_sample_collection:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
   #properties of submitted_file:
   submitted_file_id:
     Desc: TBD.
@@ -189,6 +247,12 @@ PropDefinitions:
     Req: false
     Private: false
   is_dicom:
+    Desc: TBD.
+    Src: None
+    Type: boolean
+    Req: false
+    Private: false
+  is_svs:
     Desc: TBD.
     Src: None
     Type: boolean
@@ -417,6 +481,12 @@ PropDefinitions:
     Type: boolean
     Req: false
     Private: false
+  subject_id_cross_reference:
+    Desc: TBD.
+    Src: None
+    Type: boolean
+    Req: false
+    Private: false
   contain_biospecimen_ids:
     Desc: TBD.
     Src: None
@@ -427,6 +497,18 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type: boolean
+    Req: false
+    Private: false
+  participant_id_column_header_or_number:
+    Desc: TBD.
+    Src: None
+    Type: String
+    Req: false
+    Private: false
+  alt_participant_id_column_header_or_number:
+    Desc: TBD.
+    Src: None
+    Type: String
     Req: false
     Private: false
 #properties of study:
@@ -574,7 +656,14 @@ PropDefinitions:
       - "other_non_binary"
       - "excel"
       - "DICOM"
+      - "SVS"
       - "other_binary_image"
       - "other_binary_non_image"
+    Req: false
+    Private: false
+  file_deposit_location:
+    Desc: TBD.
+    Src: None
+    Type: String
     Req: false
     Private: false

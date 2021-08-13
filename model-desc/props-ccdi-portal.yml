@@ -4,6 +4,9 @@ Properties:
 
   plurals:
     submitter: submitters
+    participant: participants
+    alt_participant: alt_participants
+    sample: samples
     submitted_file: submitted_files
     study: studies
     file_set: file_sets
@@ -21,6 +24,9 @@ Properties:
 
   id_fields:
     submitter: submitter_id
+    participant: participant_id
+    alt_participant: alt_participant_id
+    sample: sample_id
     submitted_file: submitted_file_id
     study: study_id
     file_set: file_set_id
