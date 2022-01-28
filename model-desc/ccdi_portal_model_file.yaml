@@ -1,156 +1,200 @@
+# new data model 01/25/2022 adeforge
+Handle: CDA
 Nodes:
-  submitter:
+  alias:  #the repository_name + repository_ID is a composite key value for the composite value of CDS_concept + CDS_ID, else the key is a concat of repository_name + repository_ID and value is a concat of CDS_concept + CDS_ID 
     Props:
-      - submitter_id
-      - submitter_name
-      - submitter_identifier
-      - submitter_email
-      - submitter_era_id
-      - institution_id
-      - institution_name
-      - program_id
-  participant:
+      - repository_id #string
+      - repository_name #string
+      - cds_node # string, the node in CDS schema
+      - cds_id #string, the CDS schema identifier
+  clinical_measure:
     Props:
-      - participant_id
-      - gender
-      - age_at_index
-  alt_participant:
+     - clinical_measure_id
+     - clinical_measure_description
+     - age_at_measure
+     - site_of_measure
+   # diagnosis: # may have multiple dxs for multiple timepoints?
+     # Props:
+     # - diagnosis_id
+     #  - primary_diagnosis
+     # - primary_site
+     # - age_at_diagnosis
+     # - days_to_recurrence
+     # - last_known_disease_status
+     # - days_to_last_known_status
+  experiment: # this is renaming of node 'submission':
     Props:
-      - alt_participant_id
-      - source
-  sample:
+      - experiment_id
+      - design_description
+     # - sra_experiment_accession, move to new node alias
+     # - protocol #is this a file reference?
+  file:
+    Props:
+      # - file_id #system generated GUID/PK
+      - file_name
+      - file_type
+      - file_description
+      - file_size
+      - md5sum
+      - cds_url
+      - dcf_indexd_guid
+  sequencing_detail:  # was genomic_detail, 01/28/2022 adeforge
+    Props:
+      - genomic_detail_id
+      - library_id # moved from submission
+      - library_strategy # moved from submission
+      - library_layout # paired end, single, moved from submission
+      - library_source # genomic, transcriptome, metagenomic, viral, synthetic; move from submission
+      - number_of_bp # moved from submission
+      - number_of_reads
+      - average_read_length
+      - coverage
+      - reference_genome_assembly
+  imaging_detail:
+    Props:
+      - imaging_detail_id
+      - image_modality
+      - platform
+      - instrument_model
+      - software_package # list of free text I guess
+  sample: # aka subspecimen (CMB)
     Props:
       - sample_id
-      - sample_type
-      - date_of_sample_collection
-  submitted_file:
-    Props:
-      - submitted_file_id
-      - ccdi_arm
-      - submission_date
-      - submission_ts
-      - source_ip
-      - file_count_validate
-      - filename_list_validate
-      - study_registered
-      - permitted_4_gru
-      - data_identifying
-      - species
-      - human_subjects
-      - files_count
-      - file_names
-      - file_name_suffixes
-      - is_free_text
-      - is_tsv_csv
-      - is_json
-      - is_xml
-      - is_other_non_binary
-      - is_excel
-      - is_dicom
-      - is_svs
-      - is_other_binary_image
-      - is_other_binary_non_image
-      - total_size_in_bytes
-      - subject_demographics
-      - subject_clinical_data
-      - subject_treatment_response_data
-      - subject_outcomes_data
-      - subject_imaging_data_raw
-      - subject_imaging_data_written_findings
-      - subject_data_metadata
-      - biospecimen_data
-      - surgical_pathology_reports
-      - histopathology_images_raw
-      - primary_dna_sequence_data
-      - germline_data
-      - somatic_data
-      - derived_germline_variants
-      - derived_somatic_variants
-      - primary_rnaseq_expression_data
-      - scrna_sequencing
-      - scchromatin_sequencing
-      - proteogenomics_data
-      - rppa_data
-      - fish
-      - imc
-      - in_vitro_cell_proliferation_assay
-      - in_vitro_small_molecule_sensitivity_assays
-      - in_vitro_crispr_screens
-      - in_vitro_shrna_orf_screens
-      - other
-      - other_specify
-      - primary_datatype
-      - derived_interventional_clinical_trial
-      - derived_observational_study
-      - have_subject_ids
-      - have_pii
-      - subject_id_cross_reference
-      - contain_biospecimen_ids
-      - contain_biospecimen_2_subject_mappings
-      - participant_id_column_header_or_number
-      - alt_participant_id_column_header_or_number
+      - sample_type #sample type used in an assay? more than one assay sample type could be derived from a single biopsy
+      - disease_type
+      - tumor_status # tumor or normal
+      - anatomic_site
+      - study_subject_age_at_collection # aka sample_collection_study_day (i.e. study day for the subject when sample collected) , it might be helpful to also have sample_collection_event (i.e. index event for collection day enum: enrollment, diagnosis, treatment,) 
+      - dbgap_sample_id
+      - tumor_grade
+      - tumor_stage
+      - tumor_morphology
+      - tumor_incidence_type # primary, metastatic, recurrence, progression
+  #specimen: #what is the purpose of specimen?
+  #  Props:
+  #    - specimen_id
   study:
     Props:
       - study_id
-      - pi_name
-      - pi_institution
-      - pi_email
-      - pi_era_id
       - study_title
-      - study_phs_id
-      - is_published
-      - doi
-      - submitted_2_repo
-      - gdc
-      - pdc
-      - dbGap
-      - sra
-      - genbank
-      - figshare
-      - other_repo
-  file_set:
+      - study_acronym
+      - study_description
+      - external_url
+      - dbgap_phs_accession
+    # - bioproject_id , pull bioproject_id into new node alias
+    # - index_date # what are relative dates relative to? dx date, collection date, etc.
+  study_admin:
     Props:
-      - file_set_id
-      - file_ordinal
-      - file_id
-      - file_name
-      - file_md5
-      - file_content_format
-      - file_deposit_location
+      # - cds_requestor #is this the ODS PO, the dbGAP GP or someone else?, Why is this important?
+      # - funding_agency moved to study_funding
+      - study_admin_id
+      - species
+      - study_type # adult, pediatric - needs review, there are many other facets of study type (interventional, longitudinal), should this be added after a query of study_subject.age
+      - data_types # generate from a DB query of list of data_types vs. template based entry?, generate from a query of list from enumerated values
+      - file_types # generate from a DB query of list of file extensions vs. template based entry?, list from enumerated values
+      - data_access_level #populated from a dbGAP query?
+  study_funding: # 0 or many grant or contract IDs
+    Props: 
+      - funding_agency # 0 or many per study
+      - funding_id #grant or contract ID, NIH or other
+  study_personnel:
+    Props:
+      - study_personnel_ID
+      - personnel_name
+      - personnel_type #enum: PI, Co-PI, Data Submitter, etc
+      - email_address
+      - institution
+  study_subject:
+    Props:
+      - study_subject_id
+      - race #how are multiple race values stored? is a new node needed for race to allow many to one, 01/27/2022 adeforge https://minorityhealth.hhs.gov/omh/browse.aspx?lvl=3&lvlid=54#:~:text=The%20OMB%20minimum%20categories%20for,and%20Not%20Hispanic%20or%20Latino these categories were used by CHOP's FHIR endpoints
+      - gender
+      - ethnicity  # 01/27/2022 adeforge https://minorityhealth.hhs.gov/omh/browse.aspx?lvl=3&lvlid=54#:~:text=The%20OMB%20minimum%20categories%20for,and%20Not%20Hispanic%20or%20Latino these categories were used by CHOP's FHIR endpoints
+      - vital_status
+      - age_at_enrollment
+      - age_unit
+      # -age , how is subject age recorded?
+  #therapeutic_procedure: 
+  #  Props:
+  #    - theapeutic_procedure_ID
+  #    - treatment_type
+  #    - treatment_outcome
+  #    - days_to_treatment
 Relationships:
-  has_participant:
-    Mul: many_to_many
-    Ends:
-      - Src: participant
-        Dst: submitted_file
+  of_clinical_measure:
     Props: null
-  has_alt_participant:
-    Mul: many_to_many
-    Ends:
-      - Src: alt_participant
-        Dst: participant
-    Props: null
-  sample_from_participant:
     Mul: many_to_one
     Ends:
-      - Src: sample
-        Dst: participant
+      - Src: file
+        Dst: clinical_measure
+  of_experiment: #changed from_submission to of_experiment
     Props: null
-  submitted_by:
+    Mul: many_to_one
+    Ends:
+      - Src: file
+        Dst: experiment
+      - Src: sample
+        Dst: experiment
+  of_file:
+    Props: null
+    Mul: many_to_one
+    Ends:
+      - Src: genomic_detail
+        Dst: file
+      - Src: imaging_detail
+        Dst: file
+  from_sample:
+    Props: null
     Mul: many_to_many
     Ends:
-      - Src: submitted_file
-        Dst: submitter
+      - Src: file
+        Dst: sample
+  of_study:
     Props: null
-  study_within_submitted_file:
+    Mul: many_to_one
+    Ends:
+      - Src: clinical_measure
+        Dst: study
+      - Src: experiment
+        Dst: study
+      - Src: file
+        Dst: study
+      - Src: study_admin
+        Dst: study
+      - Src: study_subject
+        Dst: study
+  from_study__funding:
+    Props: null
     Mul: many_to_many
     Ends:
       - Src: study
-        Dst: submitted_file
+        Dst: study_funding
+  from_study_personnel:
     Props: null
-  files_of_submitted_file:
+    Mul: many_to_many
+    Ends:
+      - Src: study
+        Dst: study_personnel
+  from_study_subject:
+    Props: null
+    Mul: many_to_many
+    Ends:
+      - Src: file
+        Dst: study_subject
+      - Src: clinical_measure
+        Dst: study_subject
+  of_study_subject:
+    Props: null
     Mul: many_to_one
     Ends:
-      - Src: file_set
-        Dst: submitted_file
-    Props: null
+     # - Src: diagnosis
+     #   Dst: study_subject
+      - Src: sample
+        Dst: study_subject
+     
+#  of_therapeutic_procedure:
+#    Props: null
+#    Mul: many_to_many
+#    Ends:
+#      - Src: therapeutic_procedure
+#        Dst: study_subject

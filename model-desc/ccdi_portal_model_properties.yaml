@@ -1,55 +1,420 @@
+# new properties for new model 01/25/2022 adeforge
 PropDefinitions:
-  #properties of submitter:
-  submitter_id:
+  #alias
+  repository_id: #string
     Desc: TBD.
     Src: None
     Type: string
     Req: true
     Private: false
-  submitter_name:
-    Desc: The full name of the person doing the actual submission.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-  submitter_identifier:
+  repository_name: #string
     Desc: TBD.
     Src: None
     Type: string
-    Req: false
+    Req: true
     Private: false
-  submitter_email:
+  cds_node: # string, the node in CDS schema
     Desc: TBD.
     Src: None
     Type: string
-    Req: false
+    Req: true
     Private: false
-  submitter_era_id:
+  cds_id: #string, the CDS schema identifier
     Desc: TBD.
     Src: None
     Type: string
-    Req: false
+    Req: true
     Private: false
-  institution_id:
+  # clinical_measure
+  clinical_measure_id:
     Desc: TBD.
     Src: None
     Type: string
-    Req: false
+    Req: true
     Private: false
-  institution_name:
+  clinical_measure_description:
     Desc: TBD.
     Src: None
     Type: string
-    Req: false
+    Req: true
     Private: false
-  program_id:
+  age_at_measure:
     Desc: TBD.
     Src: None
     Type: string
-    Req: false
+    Req: true
     Private: false
-  #properties of participant:
-  participant_id:
+  site_of_measure:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # experiment
+  experiment_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  design_description:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # file
+  # file_id: #system generated GUID/PK
+  #   Desc: TBD.
+  #   Src: None
+  #   Type: string
+  #   Req: true
+  #   Private: false
+  file_name:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  file_type:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  file_description:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  file_size:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  md5sum:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  cds_url:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  dcf_indexd_guid:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # genomic_detail
+  genomic_detail_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  library_id: # moved from submission
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  library_strategy: # moved from submission
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  library_layout: # paired end, single, moved from submission
+    Desc: TBD.
+    Src: None
+    Type:
+      - "paired end"
+      - "single"
+    Req: true
+    Private: false
+  library_source: # genomic, transcriptome, metagenomic, viral, synthetic; move from submission
+    Desc: TBD.
+    Src: None
+    Type:
+      - "genomic"
+      - "transcriptome"
+      - "metagenomic"
+      - "viral"
+      - "synthetic"
+    Req: true
+    Private: false
+  number_of_bp: # moved from submission
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  number_of_reads:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  average_read_length:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  coverage:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  reference_genome_assembly:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # imaging_detail
+  imaging_detail_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  image_modality:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  platform:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  instrument_model:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  software_package: # list of free text I guess
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # sampmle
+  sample_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  sample_type: #sample type used in an assay? more than one assay sample type could be derived from a single biopsy
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  disease_type:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  tumor_status: # tumor or normal
+    Desc: TBD.
+    Src: None
+    Type:
+      - "tumor"
+      - "normal"
+    Req: true
+    Private: false
+  anatomic_site:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  study_subject_age_at_collection: # aka sample_collection_study_day (i.e. study day for the subject when sample collected) , it might be helpful to also have sample_collection_event (i.e. index event for collection day enum: enrollment, diagnosis, treatment,) 
+    Desc: TBD.
+    Src: None
+    Type: datetime # this? 01/26/2022 adeforge
+    Req: true
+    Private: false
+  dbgap_sample_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  tumor_grade:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  tumor_stage:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  tumor_morphology:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  tumor_incidence_type: # primary, metastatic, recurrence, progression
+    Desc: TBD.
+    Src: None
+    Type:
+      - "primary"
+      - "metastatic"
+      - "recurrence"
+      - "progression"
+    Req: true
+    Private: false
+  # study
+  study_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  study_title:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  study_acronym:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  study_description:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  external_url:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  dbgap_phs_accession:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # study_admin
+  study_admin_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  species:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  study_type: # adult, pediatric - needs review, there are many other facets of study type (interventional, longitudinal), should this be added after a query of study_subject.age
+    Desc: TBD.
+    Src: None
+    Type:
+      - "adult"
+      - "pediatric"
+    Req: true
+    Private: false
+  data_types: # generate from a DB query of list of data_types vs. template based entry?, generate from a query of list from enumerated values
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  file_types: # generate from a DB query of list of file extensions vs. template based entry?, list from enumerated values
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  data_access_level: #populated from a dbGAP query?
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # study_funding
+  funding_agency: # 0 or many per study
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  funding_id: #grant or contract ID, NIH or other
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # study_personnel
+  study_personnel_ID:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  personnel_name:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  personnel_type: #enum: PI, Co-PI, Data Submitter, etc
+    Desc: TBD.
+    Src: None
+    Type:
+      - "PI"
+      - "Co-PI"
+      - "Data Submitter" # these? 01/26/2022 adeforge
+    Req: true
+    Private: false
+  email_address:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  institution:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  # study_subject
+  study_subject_id:
+    Desc: TBD.
+    Src: None
+    Type: string
+    Req: true
+    Private: false
+  race: #how are multiple race values stored? is a new node needed for race to allow many to one
     Desc: TBD.
     Src: None
     Type: string
@@ -61,609 +426,27 @@ PropDefinitions:
     Type: string
     Req: true
     Private: false
-  age_at_index:
-    Desc: TBD.
-    Src: None
-    Type: Integer
-    Req: true
-    Private: false
-  #properties of alt_participant:
-  alt_participant_id:
+  ethnicity:
     Desc: TBD.
     Src: None
     Type: string
     Req: true
     Private: false
-  source:
+  vital_status:
     Desc: TBD.
     Src: None
     Type: string
     Req: true
     Private: false
-  #properties of sample:
-  sample_id:
+  age_at_enrollment:
     Desc: TBD.
     Src: None
     Type: string
     Req: true
     Private: false
-  sample_type:
-    Desc: TBD.
-    Src: None
-    Type: 
-      - "Primary Solid Tumor"
-      - "Metastatic"
-      - "Blood Derived Normal"
-      - "Solid Tissue Normal"
-      - "Bone Marrow Normal"
-      - "Cell Lines"
-      - "Primary Xenograft Tissue"
-    Req: true
-    Private: false
-  date_of_sample_collection:
+  age_unit:
     Desc: TBD.
     Src: None
     Type: string
     Req: true
-    Private: false
-  #properties of submitted_file:
-  submitted_file_id:
-    Desc: TBD.
-    Src: None
-    Type: string
-    Req: true
-    Private: false
-  ccdi_arm:
-    Desc: TBD.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-  submission_date:
-    Desc: TBD.
-    Src: None
-    Type: datetime
-    Req: false
-    Private: false
-  submission_ts:
-    Desc: TBD.
-    Src: None
-    Type: datetime
-    Req: false
-    Private: false
-  source_ip:
-    Desc: TBD.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-  file_count_validate:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  filename_list_validate:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  study_registered:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  permitted_4_gru:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  data_identifying:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  species:
-    Desc: TBD.
-    Src: None
-    Type:
-      - "Cat"
-      - "Chicken"
-      - "Dog"
-      - "Drosophila"
-      - "Hamster"
-      - "Human"
-      - "Mole"
-      - "Mouse"
-      - "Non-human primate"
-      - "Pig"
-      - "Rat"
-      - "Tree shrew"
-      - "Zebrafish"
-    Req: false
-    Private: false
-  human_subjects:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  files_count:
-    Desc: TBD.
-    Src: None
-    Type: integer
-    Req: false
-    Private: false
-  file_names:
-    Desc: TBD.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-  file_name_suffixes:
-    Desc: TBD.
-    Src: None
-    Type: string
-    Req: false
-    Private: false
-  is_free_text:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_tsv_csv:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_json:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_xml:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_other_non_binary:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_excel:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_dicom:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_svs:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_other_binary_image:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  is_other_binary_non_image:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  total_size_in_bytes:
-    Desc: TBD.
-    Src: None
-    Type: integer
-    Req: false
-    Private: false
-  subject_demographics:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  subject_clinical_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  subject_treatment_response_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  subject_outcomes_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  subject_imaging_data_raw:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  subject_imaging_data_written_findings:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  subject_data_metadata:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  biospecimen_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  surgical_pathology_reports:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  histopathology_images_raw:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  primary_dna_sequence_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  germline_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  somatic_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  derived_germline_variants:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  derived_somatic_variants:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  primary_rnaseq_expression_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  scrna_sequencing:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  scchromatin_sequencing:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  proteogenomics_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  rppa_data:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  fish:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  imc:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  in_vitro_cell_proliferation_assay:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  in_vitro_small_molecule_sensitivity_assays:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  in_vitro_crispr_screens:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  in_vitro_shrna_orf_screens:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  other:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  other_specify:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  primary_datatype:
-    Desc: TBD.
-    Src: None
-    Type: 
-      - "None"
-      - "Demographics"
-      - "Clinical"
-      - "Treatment/response"
-      - "Outcomes"
-      - "Imaging-raw"
-      - "Imaging-written findings"
-    Req: false
-    Private: false
-  derived_interventional_clinical_trial:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  derived_observational_study:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  have_subject_ids:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  have_pii:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  subject_id_cross_reference:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  contain_biospecimen_ids:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  contain_biospecimen_2_subject_mappings:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  participant_id_column_header_or_number:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  alt_participant_id_column_header_or_number:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-#properties of study:
-  study_id:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: true
-    Private: false
-  pi_name:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  pi_institution:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  pi_email:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  pi_era_id:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  study_title:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  study_phs_id:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  is_published:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  doi:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  submitted_2_repo:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  gdc:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  pdc:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  dbGap:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  sra:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  genbank:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  figshare:
-    Desc: TBD.
-    Src: None
-    Type: boolean
-    Req: false
-    Private: false
-  other_repo:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-#properties of file_set:
-  file_set_id:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: true
-    Private: false
-  file_ordinal:
-    Desc: TBD.
-    Src: None
-    Type: Integer
-    Req: false
-    Private: false
-  file_id:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  file_name:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  file_md5:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
-    Private: false
-  file_content_format:
-    Desc: TBD.
-    Src: None
-    Type:
-      - "free_text"
-      - "tsv/csv"
-      - "json"
-      - "xml"
-      - "other_non_binary"
-      - "excel"
-      - "DICOM"
-      - "SVS"
-      - "other_binary_image"
-      - "other_binary_non_image"
-    Req: false
-    Private: false
-  file_deposit_location:
-    Desc: TBD.
-    Src: None
-    Type: String
-    Req: false
     Private: false
