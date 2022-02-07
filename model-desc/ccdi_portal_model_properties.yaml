@@ -374,7 +374,7 @@ PropDefinitions:
     Req: true
     Private: false
   # study_personnel
-  study_personnel_ID:
+  study_personnel_id:  # 02/03/2022 adeforge, used to be 'study_personnel_ID'
     Desc: TBD.
     Src: None
     Type: string

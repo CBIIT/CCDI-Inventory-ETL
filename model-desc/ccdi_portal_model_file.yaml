@@ -11,8 +11,8 @@ Nodes:
     Props:
      - clinical_measure_id
      - clinical_measure_description
-     - age_at_measure
-     - site_of_measure
+     #- age_at_measure  02/03/2022 adeforge, Pat said remove them
+     #- site_of_measure  02/03/2022 adeforge, Pat said remove them
    # diagnosis: # may have multiple dxs for multiple timepoints?
      # Props:
      # - diagnosis_id
@@ -99,7 +99,7 @@ Nodes:
       - funding_id #grant or contract ID, NIH or other
   study_personnel:
     Props:
-      - study_personnel_ID
+      - study_personnel_id  # 02/03/2022 adeforge, used to be 'study_personnel_ID'
       - personnel_name
       - personnel_type #enum: PI, Co-PI, Data Submitter, etc
       - email_address
@@ -139,7 +139,7 @@ Relationships:
     Props: null
     Mul: many_to_one
     Ends:
-      - Src: genomic_detail
+      - Src: sequencing_detail  # 02/07/2022 adeforge, was genomic_detail
         Dst: file
       - Src: imaging_detail
         Dst: file

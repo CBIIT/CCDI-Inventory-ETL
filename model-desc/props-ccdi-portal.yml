@@ -3,13 +3,17 @@ Properties:
   rel_prop_delimiter: "$"
 
   plurals:
-    submitter: submitters
-    participant: participants
-    alt_participant: alt_participants
+    file: filess
+    sequencing_detail: sequencing_details
+    imaging_detail: imaging_details
+    clinical_measure: clinical_measures
+    study_admin: study_admins
+    study_subject: study_subjects
+    study_funding: study_fundings
+    study_personnel: study_personnel
     sample: samples
-    submitted_file: submitted_files
+    experiment: experiments
     study: studies
-    file_set: file_sets
     
   type_mapping:
     string: String
