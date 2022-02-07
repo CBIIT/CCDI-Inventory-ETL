@@ -20,7 +20,7 @@ PREDATE = 7
 FOREVER = '9999-12-31'
 
 # duplicated declaration from data_loader.py
-NODE_TYPE = 'type'
+NODE_TYPE = 'node'  # 02/02/2022 adeforge, changed from 'type'
 CREATED = 'created'
 UPDATED = 'updated'
 CASE_ID = 'case_id'
