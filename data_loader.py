@@ -20,7 +20,7 @@ from bento.common.utils import get_logger, NODES_CREATED, RELATIONSHIP_CREATED, 
     NEW_MODE, DELETE_MODE, NODES_DELETED, RELATIONSHIP_DELETED, combined_dict_counters, \
     MISSING_PARENT, NODE_LOADED
 
-NODE_TYPE = 'type'
+NODE_TYPE = 'node'  # 02/02/2022 adeforge, changed from 'type'
 PROP_TYPE = 'Type'
 PARENT_TYPE = 'parent_type'
 PARENT_ID_FIELD = 'parent_id_field'
@@ -48,7 +48,10 @@ def get_indexes(session):
     result = session.run(command)
     indexes = set()
     for r in result:
-        indexes.add(format_as_tuple(r["labelsOrTypes"][0], r["properties"]))
+        # https://neo4j.com/docs/operations-manual/current/performance/index-configuration/#index-configuration-token-lookup
+        # Depending upon the version of Neo4j, some indices are populated automatically with empty 'labelsOrTypes' and 'properties'
+        if len(r["labelsOrTypes"]) > 0:
+            indexes.add(format_as_tuple(r["labelsOrTypes"][0], r["properties"]))
     return indexes
 
 

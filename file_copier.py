@@ -30,7 +30,7 @@ class FileLoader:
     URL = 'url'
     MANIFEST_FIELDS = [GUID, MD5, SIZE, Copier.ACL, URL]
 
-    NODE_TYPE = 'type'
+    NODE_TYPE = 'node'  # 02/02/2022 adeforge, changed from 'type'
     FILE_NAME = 'file_name'
     FILE_SIZE = "file_size"
     MD5_SUM = 'md5sum'
