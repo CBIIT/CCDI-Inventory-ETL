@@ -34,3 +34,4 @@ Properties:
     submitted_file: submitted_file_id
     study: study_id
     file_set: file_set_id
+    study_funding: funding_id

@@ -40,7 +40,7 @@ Nodes:
       - dcf_indexd_guid
   sequencing_detail:  # was genomic_detail, 01/28/2022 adeforge
     Props:
-      - genomic_detail_id
+      - sequencing_detail_id  # genomic_detail_id, 02/10/2022 adeforge
       - library_id # moved from submission
       - library_strategy # moved from submission
       - library_layout # paired end, single, moved from submission
@@ -139,8 +139,8 @@ Relationships:
     Props: null
     Mul: many_to_one
     Ends:
-      - Src: sequencing_detail  # 02/07/2022 adeforge, was genomic_detail
-        Dst: file
+      - Src: file  # 02/07/2022 adeforge, was genomic_detail
+        Dst: sequencing_detail
       - Src: imaging_detail
         Dst: file
   from_sample:
@@ -163,18 +163,18 @@ Relationships:
         Dst: study
       - Src: study_subject
         Dst: study
-  from_study__funding:
+  from_study_funding:
     Props: null
     Mul: many_to_many
     Ends:
-      - Src: study
-        Dst: study_funding
+      - Src: study_funding
+        Dst: study
   from_study_personnel:
     Props: null
     Mul: many_to_many
     Ends:
-      - Src: study
-        Dst: study_personnel
+      - Src: study_personnel
+        Dst: study
   from_study_subject:
     Props: null
     Mul: many_to_many

@@ -137,6 +137,7 @@ PropDefinitions:
     Type:
       - "paired end"
       - "single"
+      - "NA"  # 02/10/2022 adeforge, added this just to get past the loading error to see what happens next, will remove
     Req: true
     Private: false
   library_source: # genomic, transcriptome, metagenomic, viral, synthetic; move from submission
@@ -148,6 +149,7 @@ PropDefinitions:
       - "metagenomic"
       - "viral"
       - "synthetic"
+      - "NA"  # 02/10/2022 adeforge, added this just to get past the loading error to see what happens next, will remove
     Req: true
     Private: false
   number_of_bp: # moved from submission
@@ -236,6 +238,7 @@ PropDefinitions:
     Type:
       - "tumor"
       - "normal"
+      - "Not Available"  # 02/10/2022 adeforge, temporary
     Req: true
     Private: false
   anatomic_site:
@@ -247,7 +250,7 @@ PropDefinitions:
   study_subject_age_at_collection: # aka sample_collection_study_day (i.e. study day for the subject when sample collected) , it might be helpful to also have sample_collection_event (i.e. index event for collection day enum: enrollment, diagnosis, treatment,) 
     Desc: TBD.
     Src: None
-    Type: datetime # this? 01/26/2022 adeforge
+    Type: integer # 01/26/2022 adeforge, all ages are integers!!
     Req: true
     Private: false
   dbgap_sample_id:
@@ -282,6 +285,7 @@ PropDefinitions:
       - "metastatic"
       - "recurrence"
       - "progression"
+      - "Not Available"  # 02/10/2022 adeforge, temporary
     Req: true
     Private: false
   # study
