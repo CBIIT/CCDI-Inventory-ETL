@@ -163,17 +163,19 @@ Relationships:
         Dst: study
       - Src: study_subject
         Dst: study
+      - Src: sample  # 02/22/2022 adeforge, new as of USCv9
+        Dst: study
   from_study_funding:
     Props: null
     Mul: many_to_many
     Ends:
-      - Src: study_funding
+      - Src: study_funding  # 02/22/2022 adeforge, sometimes this way sometimes reversed
         Dst: study
   from_study_personnel:
     Props: null
     Mul: many_to_many
     Ends:
-      - Src: study_personnel
+      - Src: study_personnel  
         Dst: study
   from_study_subject:
     Props: null

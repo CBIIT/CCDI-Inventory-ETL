@@ -80,19 +80,19 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   file_description:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   file_size:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   md5sum:
     Desc: TBD.
@@ -162,25 +162,25 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   average_read_length:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   coverage:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   reference_genome_assembly:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   # imaging_detail
   imaging_detail_id:
@@ -224,7 +224,7 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   disease_type:
     Desc: TBD.
@@ -239,6 +239,7 @@ PropDefinitions:
       - "tumor"
       - "normal"
       - "Not Available"  # 02/10/2022 adeforge, temporary
+      - "NA"  # 02/10/2022 adeforge, temporary
     Req: true
     Private: false
   anatomic_site:
@@ -250,8 +251,8 @@ PropDefinitions:
   study_subject_age_at_collection: # aka sample_collection_study_day (i.e. study day for the subject when sample collected) , it might be helpful to also have sample_collection_event (i.e. index event for collection day enum: enrollment, diagnosis, treatment,) 
     Desc: TBD.
     Src: None
-    Type: integer # 01/26/2022 adeforge, all ages are integers!!
-    Req: true
+    Type: float  # 01/26/2022 adeforge, all ages are integers!!
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   dbgap_sample_id:
     Desc: TBD.
@@ -263,19 +264,19 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   tumor_stage:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   tumor_morphology:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   tumor_incidence_type: # primary, metastatic, recurrence, progression
     Desc: TBD.
@@ -286,7 +287,8 @@ PropDefinitions:
       - "recurrence"
       - "progression"
       - "Not Available"  # 02/10/2022 adeforge, temporary
-    Req: true
+      - "NA"  # 02/10/2022 adeforge, temporary
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   # study
   study_id:
@@ -317,7 +319,7 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   dbgap_phs_accession:
     Desc: TBD.
@@ -397,6 +399,7 @@ PropDefinitions:
       - "PI"
       - "Co-PI"
       - "Data Submitter" # these? 01/26/2022 adeforge
+      - "Data Manager"  # 02/22/2022 adeforge, is this different from a 'Data Submitter'?
     Req: true
     Private: false
   email_address:
@@ -409,7 +412,7 @@ PropDefinitions:
     Desc: TBD.
     Src: None
     Type: string
-    Req: true
+    Req: false  # 02/22/2022 adeforge, not required?
     Private: false
   # study_subject
   study_subject_id:
